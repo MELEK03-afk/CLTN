@@ -590,7 +590,7 @@ body{
   position: relative;
   top: 0;
   display: flex;
-  min-height:50vh;
+  min-height:120vh;
 }
 .backline-2{
   display: none;
@@ -599,7 +599,7 @@ body{
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 120vh;
+  height: 135vh;
   /* background: linear-gradient(to bottom, #f7f3ff, #e3f2ff); */
 }
 .signup h2{
