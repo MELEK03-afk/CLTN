@@ -81,17 +81,17 @@ body{
   margin-right: 20px;
   justify-content: flex-end;
 }
-.btsignup{
+.Hdseconnect{
   margin-left: 10px; 
   height: 40px;
   width: 130px;
-  border-radius: 5px;
+  border-radius: 7px;
   color: #212121;
   z-index: 1;
   position: absolute;
   position: relative;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: transparent;
+  color: white;
   font-size: 11px;
   font-weight: 900;
   -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
@@ -99,28 +99,11 @@ body{
   transition: all 250ms;
   cursor: pointer;
   overflow: hidden;
-  border: 0;
+  border: 1px solid white;
 }
-.btsignup::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0);
-  z-index: -1;
-  transition: all 250ms;
-  border: 0;
- }
- .btsignup:hover {
-  color: #000000;
- }
+
+
  
- .btsignup:hover::before {
-  width: 100%;
- }
 
 .adminlinks {
   width: 30%;
@@ -294,6 +277,45 @@ body{
 .iconMenuPhone{
   display: none;
 }
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.headbar{
+  z-index: 7;
+  width: 100%;
+  /* margin-top: 1.5%; */
+  height: 70px;
+  font-family: "Geist Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  /* background: rgba(0, 0, 0, 0.226); */
+  background-color: #09090a2a;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  /* border-radius: 15px; */
+}
+.accessProfile{
+  background-color: white;
+  width: 13%;
+  z-index: 10;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 86%;
+  gap: 16%;
+  border-radius: 10px;
+  position: absolute;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);  
+  transition: all 0.5s;
+}
+}
+
 @media (max-width: 768px) {
 
   .choose {
@@ -329,8 +351,8 @@ body{
     position: absolute;
     width: 150px;
     right: 10px;
-    left: 105%;
-    top: 7%;
+    left:440px;
+    top: 60px;
     z-index: 30;
     transition: all 0.5s;
     border-radius: 10px;
@@ -347,14 +369,12 @@ body{
     font-weight: 700;
   }
   #LinkAdminPhone{
-    background-color: #212121;
     text-align: center;
     width: 90%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     position: relative;
     top: -10px;
     border-radius: 10px;
-    color: white;
   }
   .iconMenuPhone{
     display: initial;
@@ -423,9 +443,9 @@ body{
     transform: translateX(-50%);
     width: 70%;
   }
-  .btsignup{
+  .Hdseconnect{
   height: 40px;
-  width: 150px;
+  width: 120px;
   padding: 0;
   border-radius: 5px;
   color: #212121;
@@ -434,55 +454,18 @@ body{
   margin: 0;
   background-color: transparent;
   color: white;
-  font-size: 6px;
+  font-size: 13px;
   transition: all 250ms;
   cursor: pointer;
-  overflow: hidden;
-  border: 0;
+  border: 1px solid white;
+  transition: all 0.3s;
 }
-.btsignup::before {
-  text-decoration: none;
- }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-.headbar{
-  z-index: 7;
-  width: 100%;
-  /* margin-top: 1.5%; */
-  height: 70px;
-  font-family: "Geist Mono", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  /* background: rgba(0, 0, 0, 0.226); */
-  background-color: #09090a2a;
-  display: flex;
-  color: white;
-  align-items: center;
-  justify-content: space-between;
-  /* border-radius: 15px; */
-}
-.accessProfile{
-  background-color: white;
-  width: 13%;
-  z-index: 10;
-  top: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  left: 86%;
-  gap: 16%;
-  border-radius: 10px;
-  position: absolute;
-  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);  
-  transition: all 0.5s;
-}
+.Hdseconnect:hover{
+  color: #00E6AD;
+  border: 2px solid #00E6AD;
 }
 
-
-
-
+}
 
 /* SignUp */
 .backline{
@@ -607,7 +590,7 @@ body{
   position: relative;
   top: 0;
   display: flex;
-  min-height:90vh;
+  min-height:50vh;
 }
 .backline-2{
   display: none;
@@ -616,13 +599,15 @@ body{
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 150vh;
-  background: linear-gradient(to bottom, #f7f3ff, #e3f2ff);
+  height: 120vh;
+  /* background: linear-gradient(to bottom, #f7f3ff, #e3f2ff); */
 }
 .signup h2{
   height:5%;
   margin: 0;
-  margin-top: 19%;
+  position: relative;
+  margin-top: 17%;
+  top: -30px;
   text-align: none;
 }
 .signup h3{

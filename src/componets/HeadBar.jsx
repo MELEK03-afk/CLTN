@@ -118,7 +118,7 @@ useEffect(() => {
               {user ?(  
               <UserRound onClick={()=>(setShowp(!showP),setRing(false))} id='userIcon' style={{fontSize:"large",marginLeft:"20px",color:"white",cursor:"pointer"}}  />
               ):(
-                <Link to='/signUp' onClick={() => (setActiveStep(0))} > <button className='btsignup'>Se connect</button></Link>
+                <Link to='/signUp' onClick={() => (setActiveStep(0),setMenuPhone(false))} > <button className='Hdseconnect'>Se connect</button></Link>
               )}
               <Menu className='iconMenuPhone' onClick={()=>(setMenuPhone(!MenuPhone),setRing(false))}/>
               {
@@ -152,7 +152,7 @@ useEffect(() => {
               </div>
             </>
           )}
-          <div className='MenuPhone' style={{height: MenuPhone ?"200px":"0px",paddingTop: MenuPhone ?"5%":"0px",paddingBottom: MenuPhone ?"5%":"0px"}}>
+          <div className='MenuPhone' style={{height: MenuPhone ?"150px":"0px",paddingTop: MenuPhone ?"5%":"0px",paddingBottom: MenuPhone ?"4%":"0px"}}>
             <Link className='LinkMenuPhone' to='/TerrainsPadel' onClick={()=>(setMenuPhone(false))} style={{display:MenuPhone ? '':"none"}}>Padel</Link>
             <Link className='LinkMenuPhone' to='/TerrainsFootball' onClick={()=>(setMenuPhone(false))} style={{display:MenuPhone ? '':"none"}}>Football</Link>
             {user ?(  
