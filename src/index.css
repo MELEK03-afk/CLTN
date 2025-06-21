@@ -1392,10 +1392,9 @@ left: 20px;
 .divcontact-2{
   width: 95%;
   position: relative;
-  top: 180px;
+  top: 80px;
   left: -80%;
   display: flex;
-    background-color: #041EE2;
   flex-direction: column;
   overflow: hidden;
   transition: left 0.9s ease-in-out;
