@@ -598,6 +598,7 @@ body{
 .signup{
   width: 100%;
   display: flex;
+  position: absolute;
   flex-direction: column;
   min-height: 145vh;
   /* background: linear-gradient(to bottom, #f7f3ff, #e3f2ff); */
@@ -912,7 +913,7 @@ left: 20px;
   flex-direction: column;
   overflow: hidden;
   transition: left 0.9s ease-in-out;
-  height: 400px;
+  height: 490px;
 }
 .divcontactHome.visible .divcontact-2{
   left: 790px;
@@ -1391,13 +1392,14 @@ left: 20px;
 .divcontact-2{
   width: 95%;
   position: relative;
-  top: 240px;
+  top: 180px;
   left: -80%;
   display: flex;
+    background-color: #041EE2;
   flex-direction: column;
   overflow: hidden;
   transition: left 0.9s ease-in-out;
-  height: 400px;
+  height: 490px;
 }
 .divcontact-1{
   width: 80%;
@@ -1550,7 +1552,7 @@ left: 20px;
 /* contact */
 .divcontactHome {
   width: 100%;
-  min-height: 120vh;
+  min-height: 60vh;
   z-index: 11;
   position: relative; /* fixed if it's a full-screen overlay */
   top: 0;
@@ -1610,10 +1612,10 @@ left: 20px;
   flex-direction: column;
   overflow: hidden;
   transition: left 0.9s ease-in-out;
-  height: 400px;
+  height: 470px;
 }
 .divcontactHome.visible .divcontact-2{
-  left: 390px;
+  left: 520px;
 }
 .divcontact-2 input,textarea{
   width: 70%;

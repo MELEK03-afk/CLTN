@@ -32,10 +32,10 @@ function SignUp() {
             <h2>Create Your Account</h2>
             {/* <h3>Just a few quick things to get started</h3> */}
             {/* <h4>FullName</h4> */}
-            <input type="text" placeholder='fullName' onChange={(e)=>setFullName(e.target.value)} className='inputsignup' />
+            <input type="text" placeholder='full Name' onChange={(e)=>setFullName(e.target.value)} className='inputsignup' />
             <p className='error'>{fullNameErr}</p>
             {/* <h4>PhoneNumber</h4> */}
-            <input type="text" placeholder='phoneNumber' onChange={(e)=>setPhoneNumber(e.target.value)} className='inputsignup' />
+            <input type="text" placeholder='phone Number' onChange={(e)=>setPhoneNumber(e.target.value)} className='inputsignup' />
             <p className='error'>{phoneNumberErr} </p>
             {/* <h4>E-mail</h4> */}
             <input type="text" placeholder='E-mail' onChange={(e)=>setEmail(e.target.value)} className='inputsignup' />
@@ -44,7 +44,7 @@ function SignUp() {
             <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} className='inputsignup' />
             <p className='error'>{passwordErr} </p>
             <button className='btsign' onClick={signUp}>Sign Up</button>
-            <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() => setShowForm(!showForm)}>{showForm ? 'SignUp' : 'SignIn'}</Link></h5>
+            <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() => setShowForm(!showForm)}>{showForm ? 'Sign Up' : 'Sign In'}</Link></h5>
           </div> )
     }
     else{
@@ -58,7 +58,7 @@ function SignUp() {
             <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} className='inputsignin' />
             <p className='error'>{passwordErr} </p>
             <button className='btsignin' onClick={singIn}>Sign In</button>
-            <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() => setShowForm(!showForm)}>{showForm ? 'SignUp' : 'SignIn'}</Link></h5>
+            <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() => setShowForm(!showForm)}>{showForm ? 'Sign Up' : 'Sign In'}</Link></h5>
           </div>
       )
     }

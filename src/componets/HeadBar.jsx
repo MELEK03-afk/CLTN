@@ -56,7 +56,9 @@ useEffect(() => {
   return (
       <div>
         <div className='headbar'>
-            <h1 style={{color:"white"}}>Kick<span style={{color:"#00E6AD"}}>Off</span></h1>
+            <Link onClick={()=>setActiveStep(0)} to="/" style={{textDecoration:"none",marginLeft:"5%",cursor:"pointer"}}>
+            <h1  style={{color:"white"}}>Kick<span style={{color:"#00E6AD"}}>Off</span></h1>
+           </Link>
             <div className='choose'>
               <Link to='/TerrainsFootball' onClick={() => (setActiveStep(1),setShowp(false),setRing(false))}  style={{  backgroundColor: activeStep === 1 ? 'transparent' : 'transparent', color: activeStep === 1 ? "white" : "#D6D6D6", padding: activeStep === 1 ? "6px 30px" : "black", borderRadius: activeStep === 1 ? "0" : "0" , borderBottom: activeStep === 1 ? " 3px solid white" : "0"  }} className='ftpd'>Foot</Link>
               <Link to='/TerrainsPadel' onClick={() => (setActiveStep(2),setShowp(false),setRing(false))} style={{  backgroundColor: activeStep === 2 ? 'transparent' : 'transparent', color: activeStep === 2 ? "white" : "#D6D6D6", padding: activeStep === 2 ? "6px 30px" : "black", borderRadius: activeStep === 2 ? "0" : "0" , borderBottom: activeStep === 2 ? " 3px solid white" : "0"  }} className='ftpd'>Padel</Link>
