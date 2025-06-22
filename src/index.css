@@ -478,7 +478,7 @@ body{
 .backline-2 {
   width: 50%;
   height: 549px;
-  background-image: url('./images/cm.jpeg');
+  background-image: url('./images/lc.jpeg');
   background-size: cover;
   background-position: center;
   position: relative; /* Needed for pseudo-elements to position absolutely inside */
@@ -492,7 +492,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.758); /* Black overlay */
+  background-color: rgba(0, 0, 0, 0.473); /* Black overlay */
   z-index: 1; /* Layered above the image */
 }
 
