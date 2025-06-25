@@ -44,7 +44,7 @@ function SignUp() {
             <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} className='inputsignup' />
             <p className='error'>{passwordErr} </p>
             <button className='btsign' onClick={signUp}>Sign Up</button>
-            <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() => setShowForm(!showForm)}>{showForm ? 'Sign Up' : 'Sign In'}</Link></h5>
+            <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() =>( setShowForm(!showForm),setEmail(''),setPassword(''),setemaildErr(''),setpasswordErr(''),setFullName(''),setfullNameErr(''),setPhoneNumber(''),setPhoneNumberErr(''))}>{showForm ? 'Sign Up' : 'Sign In'}</Link></h5>
           </div> )
     }
     else{
@@ -121,7 +121,7 @@ return true
       try {
 
         if(isValidS()){        
-          const res = await axios.post('http://localhost:2024/api/signUp', {
+          const res = await axios.post('https://svko.onrender.com/api/signUp', {
             fullName,
             email,
             phoneNumber,
@@ -179,7 +179,7 @@ return true
           </>
       );}
       if(isValid()){
-        const res= await axios.post('http://localhost:2024/api/signIn',{
+        const res= await axios.post('https://svko.onrender.com/api/signIn',{
           email,
           password
         })

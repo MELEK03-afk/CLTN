@@ -39,7 +39,7 @@ const ReservationP = () => {
 
   const getField = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:2024/api/getField/${id}`);
+      const res = await axios.get(`https://svko.onrender.com/api/getField/${id}`);
       setField(res.data.field);
       setTiltle(res.data.field.title)
       setCapacity(res.data.field.capacity)
@@ -93,7 +93,7 @@ function useRevealOnScroll() {
   
       await Promise.all(
         times.map(async (time) => {
-          const res = await axios.post("http://localhost:2024/api/checktime", {
+          const res = await axios.post("https://svko.onrender.com/api/checktime", {
             time,
             day,
             title,
@@ -136,7 +136,7 @@ function useRevealOnScroll() {
 
     }
     try {
-      const res= await axios.post(`http://localhost:2024/api/send-Request`,{
+      const res= await axios.post(`https://svko.onrender.com/api/send-Request`,{
         fullName:user.fullName,
         phoneNumber:user.phoneNumber,
         user:user.id,
@@ -239,7 +239,7 @@ function useRevealOnScroll() {
         <div className='Reservation-1'>
           <div className="Reservation-2">
               <img
-                src={`http://localhost:2024/${Image}`}
+                src={`https://svko.onrender.com/${Image}`}
                 alt="main"
                 style={{
                   width: '100%',
@@ -252,7 +252,7 @@ function useRevealOnScroll() {
           {field.images.map((src, index) => (
               <img
                 key={index}
-                src={`http://localhost:2024/${src}`}
+                src={`https://svko.onrender.com/${src}`}
                 alt={`preview-${index}`}
                 onClick={() => setImage(src)}
                 style={{

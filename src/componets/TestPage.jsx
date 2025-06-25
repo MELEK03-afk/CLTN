@@ -28,7 +28,7 @@ function TestPage() {
   
   const getAllFields = async () => {
     try {
-      const URL = user?.role === 'Admin' ? 'http://localhost:2024/api/Admin/getAllFields' : `http://localhost:2024/api/Owner/get-fields-Owner/${user.id}`
+      const URL = user?.role === 'Admin' ? 'https://svko.onrender.com/api/Admin/getAllFields' : `https://svko.onrender.com/api/Owner/get-fields-Owner/${user.id}`
       const res = await axios.get(URL , {headers : {Authorization : `Bearer ${user.token}`}});
       setFields(res.data);
     } catch (error) {
@@ -44,7 +44,7 @@ function TestPage() {
 
   const confirmDelete = async (id, toastId) => {
     try {
-      const res = await axios.delete(`http://localhost:2024/api/owner/delete-field/${id}`,{
+      const res = await axios.delete(`https://svko.onrender.com/api/owner/delete-field/${id}`,{
         //Adding token to the request
         headers: {
         'Authorization': `Bearer ${user.token}`
@@ -85,7 +85,7 @@ function TestPage() {
 
   const updateField = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:2024/api/owner/update-fields/${id}`, {
+      const res = await axios.put(`https://svko.onrender.com/api/owner/update-fields/${id}`, {
         title,
         address,
         city,

@@ -35,7 +35,7 @@ function Terrains({activeStep,setActiveStep}) {
 
   const getAllFields = async () => {
     try {
-      const res = await axios.get('http://localhost:2024/api/getAllFields');
+      const res = await axios.get('https://svko.onrender.com/api/getAllFields');
       setFields(res.data);
     } catch (error) {
       console.error("Error fetching fields:", error);
@@ -59,7 +59,7 @@ return (
         {Fields.filter((Field) => Field.type === 'football' && Field.status === 'Available').map((Field) => (
           <div className="Field" key={Field._id}>
             <div style={{ height: "85%" }}>
-              <img src={`http://localhost:2024/${Field.images[0]}`} alt="Field" />
+              <img src={`https://svko.onrender.com/${Field.images[0]}`} alt="Field" />
               <div className="donner">
                 <h4>{Field.title}</h4>
               </div>

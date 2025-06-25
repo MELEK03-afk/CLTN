@@ -73,14 +73,14 @@ const sendMail = async () => {
 
 
       try {
-        const res = await axios.post('http://localhost:2024/api/Admin/Contac-message', {
+        const res = await axios.post('https://svko.onrender.com/api/Admin/Contac-message', {
           name,
           email,
           message,
-          Number,
+          phone,
         });
         if (res.status === 200) {
-          // toast.success("Message sent successfully");
+          return toast.success("Message sent successfully");
           console.log('Message sent successfully');
         }
       } catch (error) {

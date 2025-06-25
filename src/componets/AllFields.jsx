@@ -19,7 +19,7 @@ function AllFields() {
 
   const getAllFields = async () => {
     try {
-      const res = await axios.get('http://localhost:2024/api/getAllFields');
+      const res = await axios.get('https://svko.onrender.com/api/getAllFields');
       setFields(res.data);
     } catch (error) {
       console.error("Error fetching fields:", error);

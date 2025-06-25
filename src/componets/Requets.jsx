@@ -21,8 +21,8 @@ const getAllRequests = async () => {
   try {
     const URL =
       user?.role === "Admin"
-        ? "http://localhost:2024/api/Admin/getAllRequests"
-        : `http://localhost:2024/api/Owner/get-Requests-Owner/${user.id}`;
+        ? "https://svko.onrender.com/api/Admin/getAllRequests"
+        : `https://svko.onrender.com/api/Owner/get-Requests-Owner/${user.id}`;
 
     const res = await axios.get(URL, {
       headers: {
@@ -62,7 +62,7 @@ const getAllRequests = async () => {
   const updateRequest = async (id, status) => {
     try {
       const res = await axios.post(
-        `http://localhost:2024/api/Owner/UpdateRequest/${id}`,
+        `https://svko.onrender.com/api/Owner/UpdateRequest/${id}`,
         { status },
         {
           headers: {

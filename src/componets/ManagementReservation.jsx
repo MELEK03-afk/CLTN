@@ -27,7 +27,7 @@ function TestPage() {
 
   const getAllRequests = async () => {
     try {
-      const URL = user?.role === 'Admin' ? 'http://localhost:2024/api/Admin/getAllRequests' : `http://localhost:2024/api/Owner/get-Requests-Owner/${user.id}`
+      const URL = user?.role === 'Admin' ? 'https://svko.onrender.com/api/Admin/getAllRequests' : `https://svko.onrender.com/api/Owner/get-Requests-Owner/${user.id}`
       const res = await axios.get(URL ,{
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -68,7 +68,7 @@ function TestPage() {
   const cancelReservation = async(id)=>{
     try {
        const res = await axios.put(
-      `http://localhost:2024/api/Owner/CanceledReservation/${id}`,
+      `https://svko.onrender.com/api/Owner/CanceledReservation/${id}`,
       {}, 
       {
         headers: {
@@ -153,7 +153,7 @@ function TestPage() {
         <div className="TimeReservationMR">
           {
           days.map(item => (
-            <div key={item.date} className="day" style={{color: day === item.date ? "white" :'',backgroundColor: day === item.date ? "#1F1F1F" :'#C1C1C1'}} onClick={() => (setday(item.date),setNameDay(item.dayName))}>
+            <div key={item.date} className="day" style={{color: day === item.date ? "white" :'',backgroundColor: day === item.date ? "#111827" :'#C1C1C1'}} onClick={() => (setday(item.date),setNameDay(item.dayName))}>
               <h5>{item.dayName}</h5>
               <h5>{item.date}</h5>
             </div>

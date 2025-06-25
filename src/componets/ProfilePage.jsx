@@ -38,7 +38,7 @@ function ProfilePage() {
   try {
     console.log(user.id);
     
-    const res = await axios.get(`http://localhost:2024/api/GetRequest/${user.id}`);
+    const res = await axios.get(`https://svko.onrender.com/api/GetRequest/${user.id}`);
     if (res.status === 200) {
       SetAllRequest(res.data.request)
       SetRequest(res.data.request.filter(req => {
@@ -80,7 +80,7 @@ useEffect(() => {
     }
   
     try {
-      const res = await axios.put(`http://localhost:2024/api/UpdateUser/${id}`, {
+      const res = await axios.put(`https://svko.onrender.com/api/UpdateUser/${id}`, {
         email,
         phoneNumber,
         fullName,

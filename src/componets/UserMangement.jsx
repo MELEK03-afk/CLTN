@@ -24,7 +24,7 @@ function ManegementPrd() {
   const getUser = async () => {
   
     try {
-      const res = await axios.get("http://localhost:2024/api/Admin/getUsers",{
+      const res = await axios.get("https://svko.onrender.com/api/Admin/getUsers",{
         headers: {
           'Authorization': `Bearer ${user.token}`
           }
@@ -46,7 +46,7 @@ function ManegementPrd() {
         if (role == '') {
           return toast.error('select new role or close')
         }
-      const res = await axios.put(`http://localhost:2024/api/Admin/Update-User/${id}`,{
+      const res = await axios.put(`https://svko.onrender.com/api/Admin/Update-User/${id}`,{
         role
       },{
         headers: {
@@ -93,7 +93,7 @@ function ManegementPrd() {
 
   const confirmDelete = async (id, toastId) => {
     try {
-      const res = await axios.delete(`http://localhost:2024/api/Admin/deleteUser/${id}`,{
+      const res = await axios.delete(`https://svko.onrender.com/api/Admin/deleteUser/${id}`,{
         headers: {
           'Authorization': `Bearer ${user.token}`
           }
