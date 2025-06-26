@@ -905,18 +905,19 @@ body{
 left: 20px;
 }
 .divcontact-2{
-  width: 35%;
+  width: 40%;
   position: relative;
-  top: 30px;
+  top: 10px;
   left: -90%;
   display: flex;
   flex-direction: column;
+  /* background-color: #00E6AD; */
   overflow: hidden;
   transition: left 0.9s ease-in-out;
   height: 490px;
 }
 .divcontactHome.visible .divcontact-2{
-  left: 790px;
+  left: 700px;
 }
 .divcontact-2 input,textarea{
   width: 70%;
@@ -947,7 +948,7 @@ left: 20px;
   z-index: 2;
   position: relative;
   top: 5%;
-  margin-left: 45%;
+  margin-left: 40%;
   cursor: pointer;
 }
 #TContact{
@@ -1403,10 +1404,10 @@ left: 20px;
 .divcontact-1{
   width: 80%;
   position: relative;
-  top: 120px;
+  top: 100px;
   margin-left: 6%;
-  /* background-color: #00E6AD; */
-  height: 200px;
+  height: 150px;
+  margin-bottom: 7%;
   z-index: 7;
 }
 .divcontact-1 h3{
@@ -1586,6 +1587,7 @@ left: 20px;
   width: 50%;
   position: relative;
   top: 120px;
+  background-color: #041EE2;
   margin-left: 6%;
   height: 200px;
   z-index: 7;
@@ -1617,7 +1619,7 @@ left: 20px;
   left: 520px;
 }
 .divcontact-2 input,textarea{
-  width: 70%;
+  width: 90%; /* more width on mobile */
   margin-bottom: 7%;
   color: white;
   background-color: transparent;
@@ -1626,6 +1628,7 @@ left: 20px;
   padding: 10px;
   outline: none; /* optional, removes focus glow */
   overflow: 0;
+  z-index: 30;
 }
 
 .divcontact-2 textarea:hover{
@@ -2854,11 +2857,13 @@ select option {
 }
 .dsp h5{
   color: #111827;
+  width: 90%;
   margin:0;
-  margin-left: 3%;
+  /* background-color: #00E6AD; */
+  margin-left: 2%;
   display: flex;
   align-items: center;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   margin-top: 10px;
 }
@@ -3030,16 +3035,18 @@ box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
   position: relative;
   top: 30px;
   flex-direction: column;
-  background: linear-gradient(to bottom, #000000, #111827); /* same as from-black to-gray-900 */
+  /* background: linear-gradient(to bottom, #000000, #111827); same as from-black to-gray-900 */
   z-index: 20;
 }
 .donnerProfilePhone{
   width: 450px;
   height: 300px;
   margin-left: 70px;
-  margin-top: 20px;
+  position: relative;
+  top: 70px;
   background-color: white;
   border-radius: 10px;
+  padding-bottom: 2%;
 }
 .donnerProfilePhone h1{
   color: #000000;
@@ -3055,11 +3062,12 @@ box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 .donnerProfilePhone-1{
   width: 90%;
-  height:130px;
+  height:140px;
   margin-left: 5%;
   border-radius: 10px;
   background-color: #e0dfdf;
-  margin-top: 40px;
+  margin-top:40px;
+  padding-bottom: 2%;
 }
 .dnpp{
   display: flex;
@@ -3078,7 +3086,7 @@ box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 .dnpp h5{
   color: #1D1D1D;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 400;
   margin-left: 2%;
   font-family: "Geist Mono", monospace;
@@ -3086,11 +3094,23 @@ box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
   font-weight: 300;
   font-style: normal;
 }
+.dnpp input{
+  width: 190px;
+  margin-left: 2%;
+  height: 30px;
+  border: 0;
+  outline: none;
+  padding-left: 2%;
+  /* background-color: transparent; */
+  border: 1px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+}
 .reservationProfilePhone{
   width: 450px;
   min-height: 40vh;
   margin-left: 70px;
-  margin-top: 20px;
+  margin-top: 60px;
   position: relative;
   top: 80px;
   background-color: white;

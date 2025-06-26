@@ -91,7 +91,7 @@ const getAllRequests = async () => {
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
-    const pendingCount = requests.filter((req) => req.status === "Pending").length;
+    const pendingCount = requestNP.filter((req) => req.status === "Pending").length;
     const controls = animate(count, pendingCount, { duration: 2 });
     return () => controls.stop();
   }, [requests]);
@@ -132,7 +132,7 @@ const getAllRequests = async () => {
       ) : (
         <div className="divtabe">
           {spinerR && (
-            <FadeLoader size={29} color="black" style={{ zIndex: 20, position: "relative", left: "50%" }} />
+            <FadeLoader size={29} color="black" style={{ zIndex: 30, position:"absolute", left: "50%",top:'50%' }} />
           )}
           <table border={0}>
             <thead>
@@ -171,7 +171,7 @@ const getAllRequests = async () => {
                     <button
                       style={{ backgroundColor: "transparent", border: 0, cursor: "pointer" }}
                       disabled={spinerR}
-                      onClick={() => updateRequest(req._id, "Canceled")}
+                      onClick={() => (updateRequest(req._id, "Canceled"),spinerRequest())}
                     >
                       <X style={{ color: "#F63528" }} />
                     </button>

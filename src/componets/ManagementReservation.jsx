@@ -33,7 +33,14 @@ function TestPage() {
           'Authorization': `Bearer ${user.token}`
           }
         });
-        setRequests(res.data)        
+        const requestsArray = res.data || []; // fallback to empty array
+        const todayStr = new Date().toISOString().split("T")[0];
+
+        const futureRequests = requestsArray.filter((req) => {
+          const reqDayStr = new Date(req.day).toISOString().split("T")[0];
+          return reqDayStr >= todayStr;
+        });
+        setRequests(futureRequests)        
     } catch (error) {
       console.error("Error fetching Requests:", error); 
     }
@@ -44,7 +51,7 @@ function TestPage() {
     const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  const deleteUser = async (id) => {
+  const conformationCamcelReservation = async (id) => {
     toast((t) => (
       <div style={{ display: "flex", flexDirection: "column", gap: "10px", backgroundColor: "white" }}>
         <p>Are you sure you want to Cancel this Reservation?</p>
@@ -192,7 +199,7 @@ function TestPage() {
                   <td>{requests.time}</td>
                   <td>{moment(requests.day).format("YYYY-MM-DD")}</td>
                   <td style={{ display: "flex", justifyContent: "space-evenly", fontSize: "large" }}>
-                    <X onClick={()=> deleteUser(requests._id)}  style={{color:"#F63528"}}/>
+                    <X onClick={()=> conformationCamcelReservation(requests._id)}  style={{color:"#F63528"}}/>
                   </td>
                 </tr>
               )}

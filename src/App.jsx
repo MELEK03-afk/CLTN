@@ -5,7 +5,6 @@ import SignUp from './componets/SignUp';
 import ChangeBar from './componets/ChangeBar';
 import TerrainsFootball from './componets/TerrainsFootball';
 import TerrainsPadel from './componets/TerrainsPadel';
-import HeadOwner from './componets/HeadOwner';
 import UserMangement from './componets/UserMangement';
 import AddTerrains from './componets/AddTerrains';
 import ReservationP from './componets/ReservationP';

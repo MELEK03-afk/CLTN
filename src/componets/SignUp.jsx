@@ -32,10 +32,10 @@ function SignUp() {
             <h2>Create Your Account</h2>
             {/* <h3>Just a few quick things to get started</h3> */}
             {/* <h4>FullName</h4> */}
-            <input type="text" placeholder='full Name' onChange={(e)=>setFullName(e.target.value)} className='inputsignup' />
+            <input type="text" placeholder='Full Name' onChange={(e)=>setFullName(e.target.value)} className='inputsignup' />
             <p className='error'>{fullNameErr}</p>
             {/* <h4>PhoneNumber</h4> */}
-            <input type="text" placeholder='phone Number' onChange={(e)=>setPhoneNumber(e.target.value)} className='inputsignup' />
+            <input type="text" placeholder='Phone Number' onChange={(e)=>setPhoneNumber(e.target.value)} className='inputsignup' />
             <p className='error'>{phoneNumberErr} </p>
             {/* <h4>E-mail</h4> */}
             <input type="text" placeholder='E-mail' onChange={(e)=>setEmail(e.target.value)} className='inputsignup' />
@@ -51,7 +51,7 @@ function SignUp() {
       return(
           <div className='signup'>
             <Toaster   containerStyle={{ marginTop: "5%" }}/>
-            <h2>Create Your Account</h2>
+            <h2>Connect your account</h2>
             {/* <h3>Welcome Back you've been missed</h3> */}
             <input type="text" placeholder='E-mail' onChange={(e)=>setEmail(e.target.value)} style={{marginTop:"17%"}} className='inputsignin' />
             <p className='error'>{emaildErr} </p>

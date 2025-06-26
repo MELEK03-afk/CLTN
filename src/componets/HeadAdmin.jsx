@@ -39,8 +39,18 @@ function HeadAdmin({activeStep,setActiveStep}) {
                 )
                   
                 }
-                <Link to='/AddTerrains' onClick={() => setActiveStep(3)}  style={{  backgroundColor: activeStep === 3 ? 'white' : 'transparent', color: activeStep === 3 ? "black" : "", padding: activeStep === 3 ? "6px 30px" : "black", borderRadius: activeStep === 3 ? "20px" : "black"  }}  className='OwnerLink'>Add terrain</Link>
-            </div>  
+                <Link
+                  to="/AddTerrains"
+                  style={{
+                    backgroundColor: activeStep === 3 ? 'white' : 'transparent',
+                    color: activeStep === 3 ? 'black' : '',
+                    padding: activeStep === 3 ? '6px 30px' : '',
+                    borderRadius: activeStep === 3 ? '20px' : ''
+                  }}
+                  className="OwnerLink"
+                >
+                  Add terrain
+                </Link>            </div>  
             <div className='icons'>
                 <Link to='/'><IoHomeSharp onClick={() => setActiveStep(0)} style={{fontSize:"large",marginLeft:"20px",color:"white",cursor:"pointer"}}/></Link>
                 <Menu className='MenuIcon' onClick={()=>SetShowMenu(!MenuS)} style={{cursor:"pointer"}}/>

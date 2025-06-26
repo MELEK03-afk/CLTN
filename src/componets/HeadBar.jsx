@@ -22,14 +22,21 @@ function HeadBar({activeStep,setActiveStep}) {
 
   const Notification = async () => {
     try {
-      const res = await axios.get(`http://localhost:2024/api/Owner/get-Requests-Owner/${user.id}`, {
+      const res = await axios.get(`https://svko.onrender.com/api/Owner/get-Requests-Owner/${user.id}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
       });
-      setRequests(res.data);      
+      const requestsArray = res.data || []; // fallback to empty array
+        const todayStr = new Date().toISOString().split("T")[0];
+
+        const futureRequests = requestsArray.filter((req) => {
+          const reqDayStr = new Date(req.day).toISOString().split("T")[0];
+          return reqDayStr >= todayStr;
+        });
+      setRequests(futureRequests);      
       const pending = res.data.filter(req => req.status === 'Pending');
-      setPRequest(pending);
+      setPRequest(futureRequests);
     } catch (error) {
       console.error("Failed to fetch requests", error);
     }

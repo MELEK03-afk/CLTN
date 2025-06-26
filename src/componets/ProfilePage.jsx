@@ -110,7 +110,7 @@ useEffect(() => {
           <h3>Donner Perssonnel</h3>
           <div id='PhoneDisplay'>
             <h4 >Name    :</h4>
-            <h5 style={{marginLeft:"14%"}}>{user.fullName}</h5>
+            <h5 style={{marginLeft:"12%"}}>{user.fullName}</h5>
           </div>
           <div id='PhoneDisplay'>
             <h4>Email    :</h4>
@@ -163,8 +163,20 @@ useEffect(() => {
     }
     else{
       return(
-          <>
-          </>
+           <>
+              <div className='dnpp'>
+                <h4>Name:</h4>
+                <input type="text" value={fullName} onChange={(e)=>setFullName(e.target.value)}/>
+              </div>
+              <div className='dnpp'>
+                <Mail size={17} style={{marginLeft:"10px"}}/>
+                <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+              </div>
+              <div className='dnpp'>
+                <Phone size={17} style={{marginLeft:"10px"}}/>
+                <input type="text" onChange={(e)=>setPhoneNumber(e.target.value)} value={phoneNumber}/>
+              </div>
+        </>
       )
     }
   }
@@ -230,9 +242,21 @@ useEffect(() => {
         <div className='donnerProfilePhone'>
           <h1>{user.fullName}</h1>
           <h3>{user.email}</h3>
+          <Pencil size={15} onClick={()=>(setStatu(!Statu),setEmail(user.email),setFullName(user.fullName),setPhoneNumber(user.phoneNumber))} style={{position:"absolute",left:"90%",top:"40%",cursor:"pointer"}}/>
           <div className='donnerProfilePhone-1'>
               {displayFromPhone()}
           </div>
+          {
+            Statu === false ? (
+          <div style={{display:"flex",marginLeft:"22%",marginTop:"2%"}}>
+              <button className='btProfile' style={{backgroundColor:"#BD1717"}}  onClick={()=>setStatu(true)}>Cancel</button>
+              <button className='btProfile' style={{backgroundColor:"#11D677"}} onClick={()=>updateProfile(user.id)}>update</button>
+          </div>
+            ):(
+              ''
+            )
+          }
+
         </div>
         <div className='reservationProfilePhone'>
           <div className='reservationProfilePhone-1'>
