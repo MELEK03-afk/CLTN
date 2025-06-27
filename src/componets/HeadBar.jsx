@@ -34,8 +34,7 @@ function HeadBar({activeStep,setActiveStep}) {
           const reqDayStr = new Date(req.day).toISOString().split("T")[0];
           return reqDayStr >= todayStr;
         });
-      setRequests(futureRequests);      
-      const pending = res.data.filter(req => req.status === 'Pending');
+      
       setPRequest(futureRequests);
     } catch (error) {
       console.error("Failed to fetch requests", error);

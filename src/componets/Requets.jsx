@@ -14,6 +14,11 @@ function TestPage() {
   const [spinerR, setSpinerR] = useState(false);
   const [requestNP, setRequestNP] = useState([]);
   const [requests, setRequests] = useState([]);
+  const [day, setday] = useState(() => {
+        const today = new Date();
+        return today.toISOString().split("T")[0]; // "YYYY-MM-DD"
+  }); 
+  const [typeR,setType]=useState('')
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -86,6 +91,24 @@ const getAllRequests = async () => {
       }
     }
   };
+  const getNext7Days = () => {
+      const days = [];
+      for (let i = 0; i < 7; i++) {
+        const day = moment().add(i, 'days');
+        // console.log(day); // This logs the full moment object
+        days.push({
+          date: day.format('YYYY-MM-DD'),  // Formats the date as "2025-04-23"
+          dayName: day.format('dddd'),     // Full day name, e.g., "Wednesday"
+          shortDay: day.format('ddd'),     // Abbreviated day, e.g., "Wed"
+        });
+      }
+      return days;
+    };
+  
+  
+    const days = getNext7Days();    
+  
+    
 
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -96,10 +119,10 @@ const getAllRequests = async () => {
     return () => controls.stop();
   }, [requests]);
 
-  const filteredRequests = requestNP.filter(
-    (req) =>
-      req.status === "Pending" &&
-      req.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredRquests = requests.filter((Requests) =>
+    Requests.day.includes(day) &&
+    Requests.title.toLowerCase().includes(searchTerm.toLowerCase())&&
+    Requests.type.includes(typeR)
   );
 
   return (
@@ -124,7 +147,19 @@ const getAllRequests = async () => {
         </div>
         <motion.h6 style={{ fontSize: "20px" }}>{rounded}</motion.h6>
       </div>
+      <div>
+        <div className="TimeReservationMR">
+          {
+          days.map(item => (
+            <div key={item.date} className="day" style={{color: day === item.date ? "white" :'',backgroundColor: day === item.date ? "#111827" :'#C1C1C1'}} onClick={() => (setday(item.date),setNameDay(item.dayName))}>
+              <h5>{item.dayName}</h5>
+              <h5>{item.date}</h5>
+            </div>
+          ))
+          }
 
+        </div>
+      </div>
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60vh" }}>
           <ScaleLoader color="white" />
@@ -148,7 +183,7 @@ const getAllRequests = async () => {
               </tr>
             </thead>
             <tbody>
-              {filteredRequests.map((req) => (
+              {filteredRquests.map((req) => (
                 <tr key={req._id}>
                   <td>{req.title}</td>
                   <td>{req.fullName}</td>
@@ -181,7 +216,7 @@ const getAllRequests = async () => {
             </tbody>
           </table>
 
-          {filteredRequests.length === 0 && (
+          {filteredRquests.length === 0 && (
             <p style={{ textAlign: "center", marginTop: "30px" }}>
               No pending requests found.
             </p>

@@ -35,6 +35,7 @@ function Terrains({activeStep,setActiveStep}) {
     try {
       const res = await axios.get('https://svko.onrender.com/api/getAllFields');
       setFields(res.data);
+      console.log(res.data)
     } catch (error) {
       console.error("Error fetching fields:", error);
     }
