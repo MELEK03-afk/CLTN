@@ -34,18 +34,20 @@ function HeadBar({activeStep,setActiveStep}) {
           const reqDayStr = new Date(req.day).toISOString().split("T")[0];
           return reqDayStr >= todayStr;
         });
-      
-      setPRequest(futureRequests);
+      const pendingRequests = futureRequests.filter(req => req.status === 'Pending');
+      setPRequest(pendingRequests);
     } catch (error) {
       console.error("Failed to fetch requests", error);
     }
   };
   
-  const LogOut=()=>{
+  const LogOut = () => {
     localStorage.removeItem("user");
-    navigate('/')
-    window.location.reload()
-  }
+    navigate('/');
+  };
+    const filteredRquests = requests.filter((Requests) =>
+    Requests.status === "Pending"
+  );
 
 useEffect(() => {
   // Initial fetch
@@ -71,7 +73,7 @@ useEffect(() => {
             </div>
             
             <div className='CardRing' style={{
-                height: Ring ? '500px' : '0px', overflowY: Ring ? (Prequest.length > 3 ? 'scroll' : 'hidden') : 'hidden',
+                height: Ring ? '500px' : '0px', overflowY: Ring ? (filteredRquests.length > 3 ? 'scroll' : 'hidden') : 'hidden',
                 padding: Ring ? '10px' : '0px',
                 opacity: Ring ? 1 : 0,
                 transition: 'all 0.3s ease',
@@ -83,7 +85,7 @@ useEffect(() => {
                       No requests for <br /> now
                     </h3>
                   ) : (
-                  Prequest.map((request, index) => {
+                  filteredRquests.map((request, index) => {
                     const date = new Date(request.day);
                     const dayName = date.toLocaleDateString('en-US', { weekday: 'long' }); // e.g. "Friday"
                     const dayNumber = date.getDate(); // e.g. 30
@@ -117,7 +119,7 @@ useEffect(() => {
               )}
               {
                 user?.role === 'Owner' ?(
-                  <BellRing styl  e={{cursor:"pointer"}} onClick={()=> (setRing(!Ring),setMenuPhone(false))}/>
+                  <BellRing style={{cursor:"pointer"}} onClick={()=> (setRing(!Ring),setMenuPhone(false))}/>
                 ):(
                   ''
                 )

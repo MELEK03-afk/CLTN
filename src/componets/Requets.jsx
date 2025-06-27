@@ -114,7 +114,7 @@ const getAllRequests = async () => {
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
-    const pendingCount = requestNP.filter((req) => req.status === "Pending").length;
+    const pendingCount = requests.filter((req) => req.status === "Pending").length;
     const controls = animate(count, pendingCount, { duration: 2 });
     return () => controls.stop();
   }, [requests]);
@@ -122,7 +122,8 @@ const getAllRequests = async () => {
   const filteredRquests = requests.filter((Requests) =>
     Requests.day.includes(day) &&
     Requests.title.toLowerCase().includes(searchTerm.toLowerCase())&&
-    Requests.type.includes(typeR)
+    Requests.status === "Pending"
+
   );
 
   return (

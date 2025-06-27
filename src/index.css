@@ -2428,6 +2428,11 @@ body{
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+  @media (max-width: 700px){
+   width: 380px;
+   height: 500px;
+
+  }
   /* justify-content: space-between; */
 }
 
@@ -2447,6 +2452,9 @@ body{
   align-items: center;
   width: 90%;
   margin-left: 5%;
+  @media (max-width: 700px){
+  margin-top: 10px;
+  }
 }
 
 .donner h3 {
@@ -2454,6 +2462,9 @@ body{
   color: 292929;
   margin: 0;
   font-weight: 100;
+  @media (max-width: 700px){
+  font-size: 18px;
+  }
 }
 .donner h4 {
   margin: 6px;
@@ -2461,6 +2472,9 @@ body{
   font-weight: 600;
   color: #292929;
   margin-left: 5px;
+  @media (max-width: 700px){
+  font-size: 20px;  
+  }
 }
 
 .terrainsFoot button {
