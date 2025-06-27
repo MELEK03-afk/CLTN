@@ -13,7 +13,6 @@ function HeadBar({activeStep,setActiveStep}) {
   const user = JSON.parse(localStorage.getItem('user'))
   const [showRow, setShowRow] = useState(false);
   const [showP, setShowp] = useState(false);
-  const[Prequest,setPRequest]=useState([])
   const [requests,setRequests]=useState([])
   const [MenuPhone,setMenuPhone]=useState(false)
   const[Ring,setRing]=useState(false)
@@ -35,7 +34,7 @@ function HeadBar({activeStep,setActiveStep}) {
           return reqDayStr >= todayStr;
         });
       const pendingRequests = futureRequests.filter(req => req.status === 'Pending');
-      setPRequest(pendingRequests);
+      setRequests(pendingRequests);
     } catch (error) {
       console.error("Failed to fetch requests", error);
     }
@@ -45,9 +44,7 @@ function HeadBar({activeStep,setActiveStep}) {
     localStorage.removeItem("user");
     navigate('/');
   };
-    const filteredRquests = requests.filter((Requests) =>
-    Requests.status === "Pending"
-  );
+ 
 
 useEffect(() => {
   // Initial fetch
@@ -73,19 +70,19 @@ useEffect(() => {
             </div>
             
             <div className='CardRing' style={{
-                height: Ring ? '500px' : '0px', overflowY: Ring ? (filteredRquests.length > 3 ? 'scroll' : 'hidden') : 'hidden',
+                height: Ring ? '500px' : '0px', overflowY: Ring ? (requests.length > 3 ? 'scroll' : 'hidden') : 'hidden',
                 padding: Ring ? '10px' : '0px',
                 opacity: Ring ? 1 : 0,
                 transition: 'all 0.3s ease',
               }}>
                 <h2 style={{display:Ring === true ?'':'none'}}>Requests</h2>
                 {
-                  Prequest.length == 0 ? (
+                  requests.length == 0 ? (
                     <h3 style={{ display: Ring ? '' : 'none',color:"black",textAlign:"center",marginTop:"30%" }}>
                       No requests for <br /> now
                     </h3>
                   ) : (
-                  filteredRquests.map((request, index) => {
+                  requests.map((request, index) => {
                     const date = new Date(request.day);
                     const dayName = date.toLocaleDateString('en-US', { weekday: 'long' }); // e.g. "Friday"
                     const dayNumber = date.getDate(); // e.g. 30
@@ -112,9 +109,9 @@ useEffect(() => {
               </div>
           
             <div className='icons'>
-              {user?.role === 'Owner' && Prequest.length > 0 && (
+              {user?.role === 'Owner' && requests.length > 0 && (
                 <div className='conteur' onClick={() => (setRing(!Ring),setShowp(false))}>
-                  {Prequest.length}
+                  {requests.length}
                 </div>
               )}
               {
