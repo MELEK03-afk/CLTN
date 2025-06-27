@@ -153,7 +153,10 @@ const getAllRequests = async () => {
           {
           days.map(item => (
             <div key={item.date} className="day" style={{color: day === item.date ? "white" :'',backgroundColor: day === item.date ? "#111827" :'#C1C1C1'}} onClick={() => (setday(item.date),setNameDay(item.dayName))}>
-              <h5>{item.dayName}</h5>
+              <h5>
+                
+                {item.dayName}
+              </h5>
               <h5>{item.date}</h5>
             </div>
           ))

@@ -44,7 +44,11 @@ function HeadBar({activeStep,setActiveStep}) {
     localStorage.removeItem("user");
     navigate('/');
   };
- 
+useEffect(() => {
+  if (!user) {
+    navigate('/');
+  }
+}, [user]);
 
 useEffect(() => {
   // Initial fetch
