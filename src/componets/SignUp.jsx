@@ -11,7 +11,7 @@ const pageVariants = {
   exit: { opacity: 0, y: -50, transition: { duration: 0.6 } },
 };
 
-function SignUp() {
+function SignUp({activeStep,setActiveStep}) {
   const [showForm , setShowForm] = useState(false)
   const [fullNameErr,setfullNameErr]=useState('')
   const [passwordErr,setpasswordErr]=useState('')
@@ -43,7 +43,7 @@ function SignUp() {
             {/* <h4>Password</h4> */}
             <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} className='inputsignup' />
             <p className='error'>{passwordErr} </p>
-            <button className='btsign' onClick={signUp}>Sign Up</button>
+            <button className='btsign' onClick={()=>(signUp(),setActiveStep(0))}>Sign Up</button>
             <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() =>( setShowForm(!showForm),setEmail(''),setPassword(''),setemaildErr(''),setpasswordErr(''),setFullName(''),setfullNameErr(''),setPhoneNumber(''),setPhoneNumberErr(''))}>{showForm ? 'Sign Up' : 'Sign In'}</Link></h5>
           </div> )
     }
@@ -57,7 +57,7 @@ function SignUp() {
             <p className='error'>{emaildErr} </p>
             <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} className='inputsignin' />
             <p className='error'>{passwordErr} </p>
-            <button className='btsignin' onClick={singIn}>Sign In</button>
+            <button className='btsignin' onClick={()=>(singIn(),setActiveStep(0))}>Sign In</button>
             <h5 style={{color:" rgb(184, 183, 183)"}}>{showForm ? 'You don"t have Account?' : 'Already have Account?'} <Link style={{color:'black'}} onClick={() => setShowForm(!showForm)}>{showForm ? 'Sign Up' : 'Sign In'}</Link></h5>
           </div>
       )

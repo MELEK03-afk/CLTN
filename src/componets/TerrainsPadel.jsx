@@ -28,6 +28,7 @@ function Terrains({activeStep,setActiveStep}) {
       navigate(`/Reservation/${fieldId}`);
     } else {
       navigate('/signUp');
+      setActiveStep(0)
     }
   };
 

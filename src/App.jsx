@@ -44,7 +44,7 @@ function App() {
         </Route>
 
         {/* Public  */}
-        <Route path='/signUp' element={<SignUp />} />
+        <Route path='/signUp' element={<SignUp activeStep={activeStep} setActiveStep={setActiveStep}/>} />
         <Route path='/Contact' element={<ContactBar />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/TerrainsFootball' element={<TerrainsFootball activeStep={activeStep} setActiveStep={setActiveStep} />} />
